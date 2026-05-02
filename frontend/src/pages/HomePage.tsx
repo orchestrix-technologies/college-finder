@@ -1,8 +1,10 @@
+import CollegeList from "@/components/common/College/CollegeList";
+import Header from "@/components/common/Header";
 export default function HomePage() {
   return (
     <main>
-      <h1>College Finder</h1>
-      <p>Discover the right college and course for you.</p>
+      <Header/>
+      <CollegeList/>
     </main>
   );
 }
