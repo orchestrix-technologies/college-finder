@@ -842,11 +842,9 @@ export default function CollegeDetailPage() {
       {/* ── HERO / COVER ── */}
       <div className="pt-16">
         {/* Cover Image */}
-        <div className="relative h-52 sm:h-72 overflow-hidden"
-          style={{ background: `linear-gradient(135deg, ${college.logoColor} 0%, ${college.logoColor}aa 60%, ${college.logoColor}55 100%)` }}>
-          <div className="absolute inset-0 opacity-20" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='m0 40l40-40H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
-          }} />
+        <div className="relative h-52 sm:h-72 overflow-hidden">
+          <img src={college.coverImage} alt={`${college.name} campus`} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         </div>
 
         {/* College Info Banner */}

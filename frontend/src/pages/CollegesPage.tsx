@@ -68,10 +68,25 @@ function CollegeListCard({ college, view }: { college: typeof MOCK_COLLEGES[0]; 
     return (
       <Link to={`/colleges/${college.slug}`}
         className="group flex gap-5 bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 p-5 hover:-translate-y-0.5">
-        {/* Logo */}
-        <div className="w-20 h-20 rounded-xl flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-md"
-          style={{ background: college.logoColor }}>
-          {college.logoInitials}
+        {/* Image */}
+        <div className="relative w-32 sm:w-40 h-28 sm:h-32 rounded-xl overflow-hidden shrink-0 bg-gray-100">
+          {college.coverImage ? (
+            <img src={college.coverImage} alt={college.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center"
+              style={{ background: `linear-gradient(135deg, ${college.logoColor}15 0%, ${college.logoColor}30 100%)` }}>
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                style={{ background: college.logoColor }}>
+                {college.logoInitials}
+              </div>
+            </div>
+          )}
+          {college.coverImage && (
+            <div className="absolute bottom-2 left-2 w-10 h-10 rounded-lg hidden sm:flex items-center justify-center text-white font-bold text-xs shadow-md border-2 border-white/20 backdrop-blur-md"
+              style={{ background: college.logoColor }}>
+              {college.logoInitials}
+            </div>
+          )}
         </div>
 
         {/* Main */}
@@ -160,15 +175,23 @@ function CollegeListCard({ college, view }: { college: typeof MOCK_COLLEGES[0]; 
   return (
     <Link to={`/colleges/${college.slug}`}
       className="group bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 overflow-hidden flex flex-col">
-      <div className="relative h-28 overflow-hidden" style={{ background: `linear-gradient(135deg, ${college.logoColor}15 0%, ${college.logoColor}30 100%)` }}>
+      {/* Header with cover image */}
+      <div className="relative h-28 overflow-hidden bg-gray-100">
+        {college.coverImage ? (
+          <img src={college.coverImage} alt={college.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        ) : (
+          <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${college.logoColor}15 0%, ${college.logoColor}30 100%)` }} />
+        )}
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+        
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-16 h-16 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg"
+          <div className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg border-2 border-white/20 backdrop-blur-sm"
             style={{ background: college.logoColor }}>
             {college.logoInitials}
           </div>
         </div>
         {college.nirfRanking && college.nirfRanking <= 25 && (
-          <div className="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+          <div className="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
             <TrendingUp size={9} /> NIRF #{college.nirfRanking}
           </div>
         )}
@@ -373,7 +396,7 @@ export default function CollegesPage() {
             {filters.types.length > 0 ? `Top ${filters.types[0]} Colleges in India` : 'Top Colleges in India'}
           </h1>
           <p className="text-gray-500 text-sm mt-1">
-            {filtered.length} colleges found · 2024–25 Admission Open
+            {filtered.length} colleges found · 2026-27 Admission Open
           </p>
         </div>
       </div>
