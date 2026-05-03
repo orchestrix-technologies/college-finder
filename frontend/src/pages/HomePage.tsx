@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  Search, MapPin, Star, ArrowRight, TrendingUp, Users, BookOpen,
-  Award, ChevronRight, Zap, Shield, Clock, CheckCircle
+  Search, MapPin, ArrowRight, TrendingUp,
+  ChevronRight, Zap, Shield, Clock, CheckCircle
 } from 'lucide-react';
 import { APP_NAME } from '@/config';
 import Header from '@/components/common/Header';
@@ -30,10 +30,9 @@ const TOP_EXAMS = [
 ];
 
 const STATS = [
-  { value: '35,000+', label: 'Colleges Listed', icon: <BookOpen size={22} /> },
-  { value: '5M+', label: 'Students Guided', icon: <Users size={22} /> },
-  { value: '500+', label: 'Entrance Exams', icon: <Award size={22} /> },
-  { value: '98%', label: 'Satisfaction Rate', icon: <Star size={22} /> },
+  { value: '35,000+', label: 'Colleges Listed', gradient: 'from-blue-400 to-indigo-500' },
+  { value: '5M+', label: 'Students Guided', gradient: 'from-amber-400 to-orange-500' },
+  { value: '500+', label: 'Entrance Exams', gradient: 'from-emerald-400 to-teal-500' },
 ];
 
 const WHY_US = [
@@ -268,6 +267,23 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+
+          {/* Stats row — inside hero */}
+          <div className="flex items-center justify-center gap-0 mt-14 mb-2">
+            {STATS.map((s, i) => (
+              <div key={s.label} className="flex items-center">
+                <div className="flex flex-col items-center px-10">
+                  <span className={`text-3xl sm:text-4xl font-black bg-gradient-to-br ${s.gradient} bg-clip-text text-transparent`}>
+                    {s.value}
+                  </span>
+                  <span className="text-white/45 text-[11px] font-medium tracking-widest uppercase mt-1">{s.label}</span>
+                </div>
+                {i < STATS.length - 1 && (
+                  <div className="w-px h-10 bg-white/15" />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Bottom wave */}
@@ -275,21 +291,6 @@ export default function HomePage() {
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
             <path d="M0 80L1440 80L1440 20C1200 70 960 80 720 60C480 40 240 10 0 20L0 80Z" fill="#f8fafc" />
           </svg>
-        </div>
-      </section>
-
-      {/* ── STATS ── */}
-      <section className="max-w-7xl mx-auto px-4 -mt-2 mb-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {STATS.map(s => (
-            <div key={s.label} className="bg-white rounded-2xl p-6 shadow-card border border-gray-100 flex flex-col items-center text-center">
-              <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-700 mb-3">
-                {s.icon}
-              </div>
-              <p className="text-2xl font-extrabold text-gray-900 mb-1">{s.value}</p>
-              <p className="text-sm text-gray-500 font-medium">{s.label}</p>
-            </div>
-          ))}
         </div>
       </section>
 
