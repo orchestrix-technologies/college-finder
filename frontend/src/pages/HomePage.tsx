@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Search, MapPin, ArrowRight, TrendingUp,
-  ChevronRight, Zap, Shield, Clock, CheckCircle
+  ChevronRight, Zap, Shield, Clock, CheckCircle,
+  Cpu, Heart, Briefcase, Scale, Palette, FlaskConical, BarChart2, Building2
 } from 'lucide-react';
 import { APP_NAME } from '@/config';
 import Header from '@/components/common/Header';
@@ -10,14 +11,14 @@ import Footer from '@/components/common/Footer';
 import { MOCK_COLLEGES, FEATURED_COLLEGES, searchColleges } from '@/data/mockData';
 
 const STREAMS = [
-  { name: 'Engineering', icon: '⚙️', count: '4,800+', color: 'bg-blue-50 border-blue-200 hover:border-blue-400 hover:bg-blue-100', textColor: 'text-blue-700' },
-  { name: 'Medical', icon: '🏥', count: '1,200+', color: 'bg-red-50 border-red-200 hover:border-red-400 hover:bg-red-100', textColor: 'text-red-700' },
-  { name: 'Management', icon: '💼', count: '3,600+', color: 'bg-amber-50 border-amber-200 hover:border-amber-400 hover:bg-amber-100', textColor: 'text-amber-700' },
-  { name: 'Law', icon: '⚖️', count: '980+', color: 'bg-purple-50 border-purple-200 hover:border-purple-400 hover:bg-purple-100', textColor: 'text-purple-700' },
-  { name: 'Design', icon: '🎨', count: '640+', color: 'bg-pink-50 border-pink-200 hover:border-pink-400 hover:bg-pink-100', textColor: 'text-pink-700' },
-  { name: 'Science', icon: '🔬', count: '2,100+', color: 'bg-green-50 border-green-200 hover:border-green-400 hover:bg-green-100', textColor: 'text-green-700' },
-  { name: 'Commerce', icon: '📊', count: '1,800+', color: 'bg-cyan-50 border-cyan-200 hover:border-cyan-400 hover:bg-cyan-100', textColor: 'text-cyan-700' },
-  { name: 'Architecture', icon: '🏛️', count: '420+', color: 'bg-orange-50 border-orange-200 hover:border-orange-400 hover:bg-orange-100', textColor: 'text-orange-700' },
+  { name: 'Engineering', icon: Cpu, count: '4,800+', topCollege: 'IIT Bombay', color: '#2563eb' },
+  { name: 'Medical', icon: Heart, count: '1,200+', topCollege: 'AIIMS Delhi', color: '#e11d48' },
+  { name: 'Management', icon: Briefcase, count: '3,600+', topCollege: 'IIM Ahmedabad', color: '#f59e0b' },
+  { name: 'Law', icon: Scale, count: '980+', topCollege: 'NLSIU Bangalore', color: '#7c3aed' },
+  { name: 'Design', icon: Palette, count: '640+', topCollege: 'NID Ahmedabad', color: '#ec4899' },
+  { name: 'Science', icon: FlaskConical, count: '2,100+', topCollege: 'IISc Bangalore', color: '#10b981' },
+  { name: 'Commerce', icon: BarChart2, count: '1,800+', topCollege: 'SRCC Delhi', color: '#06b6d4' },
+  { name: 'Architecture', icon: Building2, count: '420+', topCollege: 'SPA Delhi', color: '#f97316' },
 ];
 
 const TOP_EXAMS = [
@@ -286,34 +287,35 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0 80L1440 80L1440 20C1200 70 960 80 720 60C480 40 240 10 0 20L0 80Z" fill="#f8fafc" />
-          </svg>
-        </div>
       </section>
 
       {/* ── STREAMS ── */}
-      <section className="max-w-7xl mx-auto px-4 mb-16">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900">Browse by Stream</h2>
-            <p className="text-gray-500 text-sm mt-1">Find colleges in your field of interest</p>
-          </div>
+      <section className="relative z-10 bg-white rounded-t-3xl -mt-10 pb-14 mb-6"
+        style={{ boxShadow: '0 -8px 40px rgba(0,0,0,0.12)' }}>
+        <div className="max-w-7xl mx-auto px-4 pt-10">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-bold text-gray-900">Browse by Stream</h2>
           <Link to="/colleges" className="hidden sm:flex items-center gap-1 text-sm font-semibold text-primary-700 hover:underline">
             View All <ArrowRight size={15} />
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {STREAMS.map(stream => (
             <Link key={stream.name} to={`/colleges?type=${stream.name}`}
-              className={`flex flex-col items-center justify-center gap-2 p-4 rounded-2xl border-2 transition-all duration-200 cursor-pointer hover:scale-105 hover:shadow-md ${stream.color}`}>
-              <span className="text-3xl">{stream.icon}</span>
-              <span className={`text-xs font-bold text-center ${stream.textColor}`}>{stream.name}</span>
-              <span className="text-[10px] text-gray-500 font-medium">{stream.count}</span>
+              className="group flex items-center gap-4 p-4 rounded-2xl border border-gray-100 bg-white hover:border-gray-200 hover:shadow-md transition-all duration-200 cursor-pointer">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                style={{ background: stream.color }}>
+                <stream.icon size={22} color="white" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-gray-900 text-sm group-hover:text-primary-700 transition-colors">{stream.name}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{stream.count} colleges</p>
+                <p className="text-[11px] font-semibold mt-1 truncate" style={{ color: stream.color }}>{stream.topCollege}</p>
+              </div>
+              <ChevronRight size={15} className="text-gray-300 group-hover:text-primary-500 shrink-0 transition-colors" />
             </Link>
           ))}
+        </div>
         </div>
       </section>
 
