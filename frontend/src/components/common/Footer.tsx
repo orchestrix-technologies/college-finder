@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { GraduationCap, Mail, Phone, MapPin } from 'lucide-react';
+import { APP_NAME } from '@/config';
 
 function SocialIcon({ href, label, children }: { href: string; label: string; children: React.ReactNode }) {
   return (
@@ -84,7 +85,7 @@ export default function Footer() {
               <div className="w-9 h-9 bg-primary-600 rounded-xl flex items-center justify-center">
                 <GraduationCap size={20} className="text-white" />
               </div>
-              <span className="font-bold text-lg text-white">EduReach</span>
+              <span className="font-bold text-lg text-white">{APP_NAME}</span>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-5">
               India's most trusted college discovery platform. Helping 5 million+ students find their dream college every year.
@@ -92,7 +93,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail size={14} className="text-primary-400" />
-                <span>hello@edureach.in</span>
+                <span>hello@orchestrix.in</span>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
                 <Phone size={14} className="text-primary-400" />
@@ -125,7 +126,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            © {currentYear} EduReach Technologies Pvt. Ltd. All rights reserved.
+            © {currentYear} {APP_NAME} Technologies Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link to="/privacy" className="text-xs text-gray-500 hover:text-gray-300">Privacy Policy</Link>

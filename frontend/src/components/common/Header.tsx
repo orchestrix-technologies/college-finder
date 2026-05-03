@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Menu, X, GraduationCap, BookOpen, Building2, Award } from 'lucide-react';
 import { searchColleges } from '@/data/mockData';
+import { APP_NAME, APP_TAGLINE } from '@/config';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,8 +43,8 @@ export default function Header() {
               <GraduationCap size={20} className="text-white" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-lg text-gray-900 tracking-tight">EduReach</span>
-              <span className="block text-[9px] text-primary-600 font-medium -mt-1 tracking-widest uppercase">Find Your College</span>
+              <span className="font-bold text-lg text-gray-900 tracking-tight">{APP_NAME}</span>
+              <span className="block text-[9px] text-primary-600 font-medium -mt-1 tracking-widest uppercase">{APP_TAGLINE}</span>
             </div>
           </Link>
 

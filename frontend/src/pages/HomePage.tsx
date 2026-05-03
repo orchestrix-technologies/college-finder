@@ -4,6 +4,7 @@ import {
   Search, MapPin, Star, ArrowRight, TrendingUp, Users, BookOpen,
   Award, ChevronRight, Zap, Shield, Clock, CheckCircle
 } from 'lucide-react';
+import { APP_NAME } from '@/config';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import { MOCK_COLLEGES, FEATURED_COLLEGES, searchColleges } from '@/data/mockData';
@@ -20,12 +21,12 @@ const STREAMS = [
 ];
 
 const TOP_EXAMS = [
-  { name: 'JEE Main', desc: 'Engineering UG Admission', month: 'Jan & Apr 2025', applicants: '12 Lakh+', color: '#1d4ed8' },
-  { name: 'NEET-UG', desc: 'Medical UG Admission', month: 'May 2025', applicants: '20 Lakh+', color: '#16a34a' },
-  { name: 'CAT', desc: 'MBA Admission – IIMs', month: 'Nov 2025', applicants: '3 Lakh+', color: '#dc2626' },
-  { name: 'JEE Advanced', desc: 'IIT Admission', month: 'May 2025', applicants: '1.8 Lakh+', color: '#7c3aed' },
-  { name: 'GATE', desc: 'M.Tech / PSU Jobs', month: 'Feb 2025', applicants: '8 Lakh+', color: '#b45309' },
-  { name: 'CLAT', desc: 'Law Admission – NLUs', month: 'Dec 2025', applicants: '70,000+', color: '#0e7490' },
+  { name: 'JEE Main', desc: 'Engineering UG Admission', month: 'Jan & Apr 2026', applicants: '12 Lakh+', color: '#1d4ed8' },
+  { name: 'NEET-UG', desc: 'Medical UG Admission', month: 'May 2026', applicants: '20 Lakh+', color: '#16a34a' },
+  { name: 'CAT', desc: 'MBA Admission – IIMs', month: 'Nov 2026', applicants: '3 Lakh+', color: '#dc2626' },
+  { name: 'JEE Advanced', desc: 'IIT Admission', month: 'May 2026', applicants: '1.8 Lakh+', color: '#7c3aed' },
+  { name: 'GATE', desc: 'M.Tech / PSU Jobs', month: 'Feb 2026', applicants: '8 Lakh+', color: '#b45309' },
+  { name: 'CLAT', desc: 'Law Admission – NLUs', month: 'Dec 2026', applicants: '70,000+', color: '#0e7490' },
 ];
 
 const STATS = [
@@ -182,16 +183,32 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="relative pt-16 overflow-hidden">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700" />
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
+        {/* Campus background image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80')` }} />
+        {/* Dark overlay to keep text readable */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-950/90 via-primary-900/85 to-primary-800/80" />
 
         <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 text-white text-sm px-4 py-1.5 rounded-full mb-6 border border-white/20">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            Trusted by 5 Million+ Students Across India
+          <div className="relative inline-flex mb-8 cursor-pointer group">
+            {/* Glow */}
+            <div className="absolute inset-0 bg-amber-500/25 blur-2xl rounded-full scale-110" />
+            {/* Pill */}
+            <div className="relative flex items-stretch rounded-full overflow-hidden border border-white/15 backdrop-blur-md bg-white/5 shadow-lg group-hover:border-white/30 transition-all duration-300">
+              {/* Tag */}
+              <div className="flex items-center gap-1.5 bg-amber-500 px-3.5 text-white text-xs font-bold tracking-wider">
+                <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                LIVE
+              </div>
+              {/* Text */}
+              <div className="flex items-center px-4 py-2.5 text-sm text-white/90 font-medium">
+                JEE Main 2026 cutoffs updated for all counselling rounds
+              </div>
+              {/* Arrow */}
+              <div className="flex items-center pr-3.5 text-white/40 group-hover:text-white/80 transition-colors">
+                <ChevronRight size={15} />
+              </div>
+            </div>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-5">
@@ -201,7 +218,7 @@ export default function HomePage() {
             </span>
           </h1>
           <p className="text-primary-200 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-            Compare 35,000+ colleges, explore courses, check cutoffs, and get expert guidance — all in one place.
+            Courses, cutoffs, rankings and expert guidance for 35,000+ colleges across India. Everything you need to pick the right one.
           </p>
 
           {/* Search Box */}
@@ -354,7 +371,7 @@ export default function HomePage() {
       {/* ── WHY US ── */}
       <section className="max-w-7xl mx-auto px-4 mb-16">
         <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Students Trust EduReach</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Students Trust {APP_NAME}</h2>
           <p className="text-gray-500 text-sm max-w-xl mx-auto">We've helped millions of students make the most important decision of their life — choosing the right college.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -376,7 +393,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-white text-center mb-10">Students Who Found Their College Here</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { name: 'Aryan Singh', college: 'IIT Bombay – CSE', year: 'Class of 2024', quote: 'EduReach showed me every detail about IIT Bombay – the placement records, faculty, hostel, everything. Made my decision so much easier.', rating: 5 },
+              { name: 'Aryan Singh', college: 'IIT Bombay – CSE', year: 'Class of 2024', quote: `${APP_NAME} showed me every detail about IIT Bombay – the placement records, faculty, hostel, everything. Made my decision so much easier.`, rating: 5 },
               { name: 'Pooja Sharma', college: 'AIIMS Delhi – MBBS', year: 'Class of 2023', quote: 'The cutoff data and college comparison tool were invaluable. I could see exactly where I stood with my NEET score and plan accordingly.', rating: 5 },
               { name: 'Rahul Mehta', college: 'IIM Ahmedabad – PGP', year: 'Class of 2023', quote: 'The expert counselling session helped me craft my MBA application strategy. Got into my dream B-school on the first attempt!', rating: 5 },
             ].map(t => (
