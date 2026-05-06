@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
   Search, MapPin, TrendingUp, SlidersHorizontal, X,
@@ -259,6 +259,16 @@ export default function CollegesPage() {
   const [view, setView] = useState<'grid' | 'list'>('list');
   const [showMobileFilters, setShowMobileFilters] = useState(false);
 
+  useEffect(() => {
+    const q = searchParams.get('q') || '';
+    const t = searchParams.get('type') || '';
+    setFilters(prev => ({
+      ...prev,
+      query: q,
+      types: t ? [t] : (q ? [] : prev.types),
+    }));
+  }, [searchParams]);
+
   const toggle = (field: keyof Pick<Filters, 'types' | 'ownership' | 'states' | 'exams' | 'degreeLevel'>, val: string) => {
     setFilters(prev => ({
       ...prev,
@@ -270,9 +280,15 @@ export default function CollegesPage() {
 
   const filtered = useMemo(() => {
     let result = MOCK_COLLEGES.filter(c => {
-      if (filters.query && !c.name.toLowerCase().includes(filters.query.toLowerCase())
-        && !c.city.toLowerCase().includes(filters.query.toLowerCase())
-        && !c.state.toLowerCase().includes(filters.query.toLowerCase())) return false;
+      if (filters.query) {
+        const q = filters.query.toLowerCase();
+        if (!c.name.toLowerCase().includes(q)
+          && !c.shortName.toLowerCase().includes(q)
+          && !c.city.toLowerCase().includes(q)
+          && !c.state.toLowerCase().includes(q)) {
+          return false;
+        }
+      }
       if (filters.types.length > 0 && !filters.types.some(t => c.collegeType.includes(t))) return false;
       if (filters.ownership.length > 0 && !filters.ownership.some(o => c.ownershipType.includes(o))) return false;
       if (filters.states.length > 0 && !filters.states.includes(c.state)) return false;

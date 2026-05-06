@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ChevronRight, MapPin, Award, Star, Sparkles } from 'lucide-react';
 import { searchColleges, MOCK_COLLEGES } from '@/data/mockData';
@@ -7,16 +7,7 @@ import './HeroSection.css';
 export default function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<typeof MOCK_COLLEGES | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -165,7 +156,7 @@ export default function HeroSection() {
                 </span>
                 {['IIT Bombay', 'IIM Ahmedabad', 'AIIMS Delhi', 'BITS Pilani'].map((s, i) => (
                   <button key={s}
-                    onClick={() => navigate(`/colleges?q=${s}`)}
+                    onClick={() => navigate(`/colleges?q=${encodeURIComponent(s)}`)}
                     className="px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-slate-200/80 hover:border-indigo-400 hover:bg-indigo-50 text-slate-600 hover:text-indigo-700 font-bold transition-all animate-fade-up shadow-sm hover:shadow hover:-translate-y-0.5"
                     style={{ animationDelay: `${400 + i * 50}ms` }}>
                     {s}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Search, MapPin, ArrowRight, TrendingUp,
+  MapPin, ArrowRight,
   ChevronRight, Zap, Shield, Clock, CheckCircle,
   Cpu, Heart, Briefcase, Scale, Palette, FlaskConical, BarChart2, Building2,
   Calendar, Users
@@ -259,7 +259,7 @@ export default function HomePage() {
             <p className="text-slate-500 text-sm leading-relaxed font-medium">We've helped millions of students make the most important decision of their life — choosing the right college.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {WHY_US.map((item, i) => (
+            {WHY_US.map((item) => (
               <div key={item.title} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_-15px_rgba(79,70,229,0.12)] hover:-translate-y-1 transition-all duration-300 relative group flex flex-col">
                 <div className="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-10 transition-opacity duration-300 scale-150 transform -translate-y-2 translate-x-2 pointer-events-none text-indigo-600">
                   {item.icon}
