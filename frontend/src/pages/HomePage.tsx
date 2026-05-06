@@ -135,7 +135,9 @@ function CollegeCard({ college }: { college: typeof MOCK_COLLEGES[0] }) {
             className="flex-1 py-2 text-center text-xs font-semibold text-primary-700 border border-primary-200 rounded-lg hover:bg-primary-50 transition-colors">
             View Details
           </Link>
-          <button className="flex-1 py-2 text-center text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
+          <button 
+            onClick={(e) => { e.preventDefault(); alert("Please login to apply. This feature will be implemented in the full version."); }}
+            className="flex-1 py-2 text-center text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
             Apply Now
           </button>
         </div>
@@ -156,10 +158,13 @@ export default function HomePage() {
       <section className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Browse by <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Stream</span></h2>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-3">
+              Browse by <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Stream</span>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white shadow-sm shadow-indigo-200">Soon</span>
+            </h2>
             <p className="text-slate-500 mt-1 text-sm font-medium">Explore pathways to your dream career</p>
           </div>
-          <Link to="/colleges" className="hidden sm:flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-5 py-2.5 rounded-full transition-all hover:shadow-sm">
+          <Link to="/courses" className="hidden sm:flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-5 py-2.5 rounded-full transition-all hover:shadow-sm">
             View All Streams <ArrowRight size={16} />
           </Link>
         </div>
@@ -192,11 +197,14 @@ export default function HomePage() {
       <section className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-20 lg:mb-24">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Top Ranked <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Colleges</span></h2>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-3">
+              Top Ranked <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Colleges</span>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-cyan-500 text-white shadow-sm shadow-cyan-100">Soon</span>
+            </h2>
             <p className="text-slate-500 mt-1 text-sm font-medium">Best institutions in India for 2026-27</p>
           </div>
-          <Link to="/colleges" className="hidden sm:flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-5 py-2.5 rounded-full transition-all hover:shadow-sm">
-            View All Colleges <ArrowRight size={16} />
+          <Link to="/rankings" className="hidden sm:flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-5 py-2.5 rounded-full transition-all hover:shadow-sm">
+            View Detailed Rankings <ArrowRight size={16} />
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -216,13 +224,20 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-bold uppercase tracking-wider mb-3 border border-indigo-100">
                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" /> Stay Updated
               </div>
-              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Upcoming <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Entrance Exams</span></h2>
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-3">
+                Upcoming Entrance <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">Exams</span>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-orange-500 text-white shadow-sm shadow-orange-100">Soon</span>
+              </h2>
               <p className="text-slate-500 mt-1 text-sm font-medium">Don't miss important dates – track all exams in one place</p>
             </div>
+            <Link to="/exams" className="hidden sm:flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 px-5 py-2.5 rounded-full transition-all hover:shadow-sm">
+              View All Exams <ArrowRight size={16} />
+            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {TOP_EXAMS.map(exam => (
-              <div key={exam.name}
+              <Link key={exam.name}
+                to={`/exams/${exam.name.toLowerCase().replace(/\s+/g, '-')}`}
                 className="group flex items-center gap-4 bg-white p-4 rounded-2xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.03)] hover:border-indigo-100 hover:shadow-[0_15px_30px_-15px_rgba(79,70,229,0.12)] transition-all duration-300 relative overflow-hidden cursor-pointer">
                 <div className="absolute top-0 left-0 w-1 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: exam.color }} />
                 
@@ -245,7 +260,7 @@ export default function HomePage() {
                 </div>
                 
                 <ChevronRight size={16} className="text-slate-300 group-hover:text-indigo-600 shrink-0 transition-colors" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -293,7 +308,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Aryan Singh', college: 'IIT Bombay – CSE', year: 'Class of 2024', quote: `${APP_NAME} showed me every detail about IIT Bombay – the placement records, faculty, hostel, everything. Made my decision so much easier.`, img: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80' },
+              { name: 'Aryan Singh', college: 'IIT Bombay – CSE', year: 'Class of 2026', quote: `${APP_NAME} showed me every detail about IIT Bombay – the placement records, faculty, hostel, everything. Made my decision so much easier.`, img: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80' },
               { name: 'Pooja Sharma', college: 'AIIMS Delhi – MBBS', year: 'Class of 2023', quote: 'The cutoff data and college comparison tool were invaluable. I could see exactly where I stood with my NEET score and plan accordingly.', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80' },
               { name: 'Rahul Mehta', college: 'IIM Ahmedabad – PGP', year: 'Class of 2023', quote: 'The expert counselling session helped me craft my MBA application strategy. Got into my dream B-school on the first attempt!', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80' },
             ].map(t => (

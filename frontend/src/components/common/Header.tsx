@@ -29,7 +29,8 @@ export default function Header() {
   const navLinks = [
     { label: 'Colleges', to: '/colleges', icon: <Building2 size={15} /> },
     { label: 'Courses', to: '/courses', icon: <BookOpen size={15} /> },
-    { label: 'Rankings', to: '/colleges', icon: <Award size={15} /> },
+    { label: 'Exams', to: '/exams', icon: <GraduationCap size={15} /> },
+    { label: 'Rankings', to: '/rankings', icon: <Award size={15} /> },
   ];
 
   return (
@@ -115,10 +116,11 @@ export default function Header() {
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-primary-700 border border-primary-200 rounded-lg hover:bg-primary-50 transition-all">
               Explore
             </Link>
-            <Link to="/apply"
-              className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-all shadow-sm">
-              Get Counselling
-            </Link>
+            <button
+              onClick={() => alert("Login functionality is coming soon! This is currently a demo version.")}
+              className="hidden sm:inline-flex items-center px-6 py-2 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-all shadow-sm active:scale-95">
+              Login
+            </button>
 
             <button className="md:hidden p-2 rounded-lg text-gray-500 hover:bg-gray-100" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -138,7 +140,11 @@ export default function Header() {
             ))}
             <div className="pt-3 flex flex-col gap-2 border-t border-gray-100">
               <Link to="/colleges" className="btn-outline w-full justify-center" onClick={() => setMobileOpen(false)}>Explore Colleges</Link>
-              <Link to="/apply" className="btn-primary w-full justify-center" onClick={() => setMobileOpen(false)}>Get Free Counselling</Link>
+              <button 
+                className="w-full py-3 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-all"
+                onClick={() => { alert("Login functionality is coming soon! This is currently a demo version."); setMobileOpen(false); }}>
+                Login
+              </button>
             </div>
           </div>
         )}

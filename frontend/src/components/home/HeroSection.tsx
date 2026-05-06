@@ -26,7 +26,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative pt-20 pb-16 lg:pt-28 lg:pb-24 overflow-hidden bg-[#fafafc]">
+    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-[#fafafc]">
       {/* Epic Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="absolute top-[-20%] right-[-10%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-br from-indigo-300/40 via-violet-200/30 to-fuchsia-100/40 blur-[100px] animate-blob-shift mix-blend-multiply opacity-80" />

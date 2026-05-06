@@ -159,7 +159,9 @@ function CollegeListCard({ college, view }: { college: typeof MOCK_COLLEGES[0]; 
               className="px-4 py-1.5 text-xs font-semibold text-primary-700 border border-primary-200 rounded-lg hover:bg-primary-50 transition-colors">
               View Details
             </Link>
-            <button className="px-4 py-1.5 text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
+            <button 
+              onClick={(e) => { e.preventDefault(); alert("Please login to apply. This feature will be implemented in the full version."); }}
+              className="px-4 py-1.5 text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
               Apply Now
             </button>
             <button className="px-4 py-1.5 text-xs font-semibold text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
@@ -231,7 +233,9 @@ function CollegeListCard({ college, view }: { college: typeof MOCK_COLLEGES[0]; 
           <button className="flex-1 py-1.5 text-center text-xs font-semibold text-primary-700 border border-primary-200 rounded-lg hover:bg-primary-50 transition-colors">
             Details
           </button>
-          <button className="flex-1 py-1.5 text-center text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
+          <button 
+            onClick={(e) => { e.preventDefault(); alert("Please login to apply. This feature will be implemented in the full version."); }}
+            className="flex-1 py-1.5 text-center text-xs font-semibold text-white bg-primary-700 rounded-lg hover:bg-primary-800 transition-colors">
             Apply
           </button>
         </div>
@@ -400,20 +404,56 @@ export default function CollegesPage() {
       <Header />
 
       {/* Page Header */}
-      <div className="bg-white border-b border-gray-100 pt-16">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-            <Link to="/" className="hover:text-primary-700">Home</Link>
-            <span>/</span>
-            <span className="text-gray-800 font-medium">Colleges</span>
-            {filters.types.length > 0 && <><span>/</span><span className="text-gray-800 font-medium">{filters.types[0]}</span></>}
-          </nav>
-          <h1 className="text-2xl font-bold text-gray-900">
-            {filters.types.length > 0 ? `Top ${filters.types[0]} Colleges in India` : 'Top Colleges in India'}
-          </h1>
-          <p className="text-gray-500 text-sm mt-1">
-            {filtered.length} colleges found · 2026-27 Admission Open
-          </p>
+      <div className="bg-white border-b border-gray-100 pt-16 relative overflow-hidden">
+        {/* Background Decorative Blob */}
+        <div className="absolute top-0 right-0 w-[30%] h-full bg-gradient-to-l from-indigo-50/50 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 py-8 lg:py-12 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1">
+              <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <Link to="/" className="hover:text-primary-700">Home</Link>
+                <span>/</span>
+                <span className="text-gray-800 font-medium">Colleges</span>
+                {filters.types.length > 0 && <><span>/</span><span className="text-gray-800 font-medium">{filters.types[0]}</span></>}
+              </nav>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                {filters.types.length > 0 ? `Top ${filters.types[0]} Colleges in India` : 'Top Colleges in India'}
+              </h1>
+              <p className="text-slate-500 text-base md:text-lg max-w-2xl font-medium leading-relaxed">
+                Discover {filtered.length} elite institutions for the 2026-27 academic session. 
+                Compare rankings, fees, and placements to find your ideal campus.
+              </p>
+              <div className="flex items-center gap-4 mt-6">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map(i => (
+                    <img key={i} className="w-8 h-8 rounded-full border-2 border-white object-cover" src={`https://i.pravatar.cc/100?img=${i+10}`} alt="User" />
+                  ))}
+                </div>
+                <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Trusted by 5M+ Students</p>
+              </div>
+            </div>
+            
+            {/* Header Image */}
+            <div className="w-full max-w-sm lg:max-w-md animate-fade-left">
+              <div className="relative p-2 bg-white rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 transform hover:scale-105 transition-transform duration-500">
+                <img 
+                  src="/college_campus_header_1778051229226.png" 
+                  alt="Campus Life" 
+                  className="w-full h-48 md:h-64 object-cover rounded-[1.5rem]"
+                />
+                <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-2xl shadow-xl border border-slate-50 flex items-center gap-3 animate-float-soft">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center shadow-lg shadow-indigo-200">
+                    <TrendingUp size={20} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase">Live Updates</p>
+                    <p className="text-sm font-black text-slate-900">2026 Admissions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

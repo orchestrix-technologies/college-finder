@@ -278,7 +278,11 @@ function CoursesTab({ college }: { college: NonNullable<ReturnType<typeof getCol
                   <p className="font-bold text-gray-900">₹{(course.totalFee / 100000).toFixed(1)}L</p>
                   <p className="text-xs text-gray-500">₹{(course.feePerYear / 100000).toFixed(1)}L/yr</p>
                 </div>
-                <button className="btn-primary text-xs px-4 py-2">Apply Now</button>
+                <button 
+                  onClick={() => alert("Please login to apply. This feature will be implemented in the full version.")}
+                  className="btn-primary text-xs px-4 py-2">
+                  Apply Now
+                </button>
               </div>
             </div>
 
@@ -363,7 +367,7 @@ function AdmissionTab({ college }: { college: NonNullable<ReturnType<typeof getC
       {/* Category Cutoffs Sample */}
       <div className="card p-6">
         <h2 className="text-lg font-bold text-gray-900 mb-2 flex items-center gap-2">
-          <BarChart2 size={18} className="text-primary-600" /> Expected Cutoff 2024
+          <BarChart2 size={18} className="text-primary-600" /> Expected Cutoff 2026
         </h2>
         <p className="text-xs text-gray-500 mb-4">Illustrative cutoff ranges based on previous year data</p>
         <div className="overflow-x-auto">
@@ -970,7 +974,9 @@ export default function CollegeDetailPage() {
               <div className="card p-5 bg-gradient-to-br from-primary-700 to-primary-900 border-0 text-white">
                 <h3 className="font-bold text-lg mb-1">Apply for Admission</h3>
                 <p className="text-primary-200 text-sm mb-4">Get personalized guidance and apply to {college.shortName}</p>
-                <button className="w-full py-2.5 bg-white text-primary-800 font-bold rounded-xl text-sm hover:bg-primary-50 transition-colors mb-2">
+                <button 
+                  onClick={() => alert("Please login to apply. This feature will be implemented in the full version.")}
+                  className="w-full py-2.5 bg-white text-primary-800 font-bold rounded-xl text-sm hover:bg-primary-50 transition-colors mb-2">
                   Apply Now
                 </button>
                 <button className="w-full py-2.5 bg-primary-600/50 text-white font-semibold rounded-xl text-sm hover:bg-primary-600 transition-colors border border-primary-500 flex items-center justify-center gap-2">
@@ -1006,7 +1012,9 @@ export default function CollegeDetailPage() {
                   <input type="text" placeholder="Your Name" className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-primary-300" />
                   <input type="email" placeholder="Email Address" className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-primary-300" />
                   <input type="tel" placeholder="Mobile Number" className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-primary-300" />
-                  <button className="w-full py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg text-sm transition-colors">
+                  <button 
+                    onClick={() => alert("Please login to get personalized guidance. This feature will be implemented in the full version.")}
+                    className="w-full py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg text-sm transition-colors">
                     Get Free Guidance
                   </button>
                 </div>

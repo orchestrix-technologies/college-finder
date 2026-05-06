@@ -31,12 +31,12 @@ export default function Footer() {
       { label: 'BITS Pilani', to: '/colleges/bits-pilani' },
     ],
     'Entrance Exams': [
-      { label: 'JEE Main 2025', to: '/exams/jee-main' },
-      { label: 'JEE Advanced 2025', to: '/exams/jee-advanced' },
-      { label: 'NEET 2025', to: '/exams/neet' },
-      { label: 'CAT 2025', to: '/exams/cat' },
-      { label: 'GATE 2025', to: '/exams/gate' },
-      { label: 'CLAT 2025', to: '/exams/clat' },
+      { label: 'JEE Main 2026', to: '/exams/jee-main' },
+      { label: 'JEE Advanced 2026', to: '/exams/jee-advanced' },
+      { label: 'NEET 2026', to: '/exams/neet' },
+      { label: 'CAT 2026', to: '/exams/cat' },
+      { label: 'GATE 2026', to: '/exams/gate' },
+      { label: 'CLAT 2026', to: '/exams/clat' },
     ],
     'Quick Links': [
       { label: 'College Predictor', to: '/tools/predictor' },
@@ -112,10 +112,13 @@ export default function Footer() {
               <h4 className="font-semibold text-white text-sm mb-4">{title}</h4>
               <ul className="space-y-2.5">
                 {items.map(item => (
-                  <li key={item.label}>
+                  <li key={item.label} className="flex items-center gap-2">
                     <Link to={item.to} className="text-sm text-gray-400 hover:text-white transition-colors">
                       {item.label}
                     </Link>
+                    {(title === 'Entrance Exams' || title === 'Quick Links') && (
+                      <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-slate-800 text-slate-500 border border-slate-700 uppercase tracking-tighter">Soon</span>
+                    )}
                   </li>
                 ))}
               </ul>
