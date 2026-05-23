@@ -1,0 +1,43 @@
+college_id,step,title,description
+1,1,JEE Advanced Registration,Register and appear for JEE Advanced after qualifying JEE Main.
+1,2,JoSAA Counselling,Participate in Joint Seat Allocation Authority (JoSAA) counselling based on rank.
+1,3,Choice Filling,Fill institute and program preferences in order of priority.
+1,4,Seat Allotment,"Seats are allotted based on rank, category, and choices."
+1,5,Document Verification,Submit required documents online and report to institute for verification.
+1,6,Fee Payment & Enrollment,Pay semester fees and complete enrollment formalities.
+2,1,JEE Advanced Qualification,Must clear JEE Main first then qualify JEE Advanced.
+2,2,JoSAA Counselling Registration,Register on JoSAA portal within the specified dates.
+2,3,Fill Program Choices,Fill choices of institutes and programs in preferred order.
+2,4,Seat Allotment Result,Check seat allotment based on rank and preferences.
+2,5,Online Document Verification,Upload all required documents for online verification.
+2,6,Report to Institute,Physically report to IIT Delhi for final admission.
+3,1,Qualify Entrance Exam,Clear JEE Advanced (BS Research) or GATE/CSIR-NET (PG/PhD).
+3,2,Apply Online,Fill the online application form at iisc.ac.in with all required details.
+3,3,Merit List & Interview,Shortlisted candidates are called for written test/interview (for Ph.D).
+3,4,Admission Offer,Admission offers sent to selected candidates.
+3,5,Fee Payment,Confirm admission by paying the first semester fees online.
+4,1,BITSAT Registration,Register for BITSAT on the official BITS Pilani website.
+4,2,Appear for BITSAT,Take the computer-based BITSAT test at authorized centers.
+4,3,Apply for Admission,"Fill the admission application form with BITSAT score and preferences."
+4,4,Iteration Process,Participate in the merit-based iterative admission process.
+4,5,Fee Payment,Pay the admission and semester fees online.
+4,6,Reporting,Report to the campus with original documents.
+5,1,JEE Main,Qualify JEE Main and register for JoSAA counselling.
+5,2,JoSAA/CSAB Counselling,Fill NIT preferences in JoSAA or CSAB (Special Round).
+5,3,Seat Allotment,Accept allotted seat and pay seat acceptance fee.
+5,4,Reporting,Report to NIT Trichy with original documents.
+6,1,VITEEE Registration,Register for VITEEE online at vit.ac.in from November onwards.
+6,2,VITEEE Exam,Appear for VITEEE computer-based test at authorized centers.
+6,3,Counselling,Participate in online or offline counselling based on VITEEE rank.
+6,4,Program Selection,Choose program based on rank and seat availability.
+6,5,Fee Payment & Reporting,Pay fees and report to campus with documents.
+7,1,NEET-UG Qualification,Appear and qualify NEET-UG conducted by NTA.
+7,2,MCC Counselling,Register for MCC (Medical Counselling Committee) counselling.
+7,3,Choice Filling,Fill AIIMS-specific seats in preference order.
+7,4,Seat Allotment,Seat allotted based on NEET rank and choices.
+7,5,Reporting & Document Verification,Report to AIIMS Delhi with original documents.
+8,1,CAT Registration,"Register and appear for CAT. Aim for 99+ percentile for a realistic chance."
+8,2,IIMA Application,"Apply on IIMA website with academic records, work experience, essays."
+8,3,Shortlisting,"Shortlisted based on CAT percentile, academics, and work experience."
+8,4,WAT-PI Process,Written Ability Test followed by rigorous Personal Interview at IIM Ahmedabad.
+8,5,Final Merit List,"Final admission based on composite score of CAT, WAT-PI, academics, and work experience."

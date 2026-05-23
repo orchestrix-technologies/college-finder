@@ -1,0 +1,29 @@
+college_id,exam_name
+1,JEE Advanced
+1,GATE
+1,CAT
+1,JAM
+1,CEED
+2,JEE Advanced
+2,GATE
+2,CAT
+2,JAM
+3,JEE Advanced
+3,KVPY
+3,GATE
+3,CSIR-NET
+3,JEST
+3,TIFR-GS
+4,BITSAT
+5,JEE Main
+5,GATE
+5,NIMCET
+6,VITEEE
+6,JEE Main
+6,SAT (International)
+7,NEET-UG
+7,NEET-PG
+7,AIIMS-PG
+8,CAT
+8,GMAT
+8,GRE

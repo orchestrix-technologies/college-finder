@@ -1,0 +1,30 @@
+college_id,course_id,name,degree_level,degree_type,duration,total_fee,fee_per_year,total_seats,avg_package_lpa,highest_package_lpa,placement_percentage,mode,exams_accepted
+1,c1,B.Tech in Computer Science & Engineering,UG,B.Tech,4 Years,800000,200000,120,28,2.5,100,Full Time,JEE Advanced
+1,c2,B.Tech in Electrical Engineering,UG,B.Tech,4 Years,800000,200000,80,22,1.8,98,Full Time,JEE Advanced
+1,c3,M.Tech in Data Science & AI,PG,M.Tech,2 Years,480000,240000,30,32,3.2,100,Full Time,GATE
+1,c4,MBA (SJMSOM),PG,MBA,2 Years,1100000,550000,120,29,1.5,100,Full Time,CAT
+1,c5,Ph.D in Engineering,PhD,Ph.D,5 Years,50000,10000,200,18,0.9,95,Full Time,"GATE,CSIR-NET"
+2,c1,B.Tech in Computer Science & Engineering,UG,B.Tech,4 Years,850000,212500,115,30,2.8,100,Full Time,JEE Advanced
+2,c2,B.Tech in Electrical Engineering,UG,B.Tech,4 Years,850000,212500,85,24,2.2,99,Full Time,JEE Advanced
+2,c3,M.Tech in Artificial Intelligence,PG,M.Tech,2 Years,520000,260000,25,35,4.0,100,Full Time,GATE
+2,c4,MBA (DMS),PG,MBA,2 Years,1200000,600000,68,31,1.8,100,Full Time,CAT
+3,c1,BS Research (4-year),UG,BS,4 Years,200000,50000,130,22,1.5,88,Full Time,"JEE Advanced,KVPY"
+3,c2,M.Tech in Computer Science,PG,M.Tech,2 Years,120000,60000,50,28,3.0,95,Full Time,GATE
+3,c3,M.Tech in Artificial Intelligence and Machine Learning,PG,M.Tech,2 Years,120000,60000,30,38,5.0,100,Full Time,GATE
+3,c4,Ph.D in Physics / Chemistry / Biology,PhD,Ph.D,5 Years,0,0,300,15,0.8,92,Full Time,"GATE,CSIR-NET,JEST"
+4,c1,B.E. in Computer Science,UG,B.E.,4 Years,2000000,500000,180,18,1.5,97,Full Time,BITSAT
+4,c2,M.Sc. (Hons.) Economics + B.E. CSE (Dual Degree),UG,Dual Degree,5 Years,2500000,500000,60,22,2.0,98,Full Time,BITSAT
+4,c3,M.E. in Software Systems,PG,M.E.,2 Years,900000,450000,30,20,1.2,95,Full Time,"BITSAT,GATE"
+5,c1,B.Tech in Computer Science & Engineering,UG,B.Tech,4 Years,280000,70000,164,14,1.0,95,Full Time,JEE Main
+5,c2,B.Tech in Mechanical Engineering,UG,B.Tech,4 Years,280000,70000,137,8,0.6,88,Full Time,JEE Main
+5,c3,M.Tech in Software Engineering,PG,M.Tech,2 Years,120000,60000,20,15,0.8,92,Full Time,GATE
+6,c1,B.Tech in Computer Science (Specializations in AI / DS / Cybersecurity),UG,B.Tech,4 Years,750000,187500,600,8,0.9,86,Full Time,"VITEEE,JEE Main"
+6,c2,B.Tech in Mechanical Engineering,UG,B.Tech,4 Years,700000,175000,300,5.5,0.4,78,Full Time,"VITEEE,JEE Main"
+6,c3,M.Tech in AI & Machine Learning,PG,M.Tech,2 Years,360000,180000,60,12,0.6,90,Full Time,"GATE,VITMEE"
+6,c4,MBA,PG,MBA,2 Years,600000,300000,120,8,0.5,88,Full Time,"CAT,XAT,GMAT,VIT MBA Exam"
+7,c1,MBBS,UG,MBBS,5.5 Years,35000,7000,107,15,0.8,100,Full Time,NEET-UG
+7,c2,M.D. in General Medicine,PG,M.D.,3 Years,150000,50000,15,20,1.0,100,Full Time,"AIIMS-PG,NEET-PG"
+7,c3,M.S. in General Surgery,PG,M.S.,3 Years,150000,50000,12,22,1.2,100,Full Time,"AIIMS-PG,NEET-PG"
+8,c1,Post Graduate Programme in Management (PGP),PG,MBA (PGP),2 Years,2500000,1250000,420,32,7.5,100,Full Time,CAT
+8,c2,PGP in Food and Agribusiness Management (PGP-FABM),PG,MBA,2 Years,2500000,1250000,42,18,2.5,100,Full Time,CAT
+8,c3,Executive MBA (One-Year),PG,PGPX,1 Year,3500000,3500000,70,42,5.0,100,Full Time,"GMAT,GRE,CAT"

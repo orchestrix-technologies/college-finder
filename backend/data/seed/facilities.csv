@@ -1,0 +1,78 @@
+college_id,name,category,icon
+1,Central Library,Academic,📚
+1,Research Labs (200+),Academic,🔬
+1,Olympic-size Swimming Pool,Sports,🏊
+1,Cricket Ground,Sports,🏏
+1,Football & Hockey Stadium,Sports,⚽
+1,Gymnasium,Sports,💪
+1,Boys Hostel (18 blocks),Hostel,🏠
+1,Girls Hostel (3 blocks),Hostel,🏠
+1,Hospital & Health Centre,Medical,🏥
+1,IIT Powai Lake,Recreation,🌊
+1,Shopping Complex,Recreation,🛍️
+1,24/7 Wi-Fi Campus,Technology,📶
+1,Supercomputer Facility,Technology,💻
+1,Bank & ATM,Banking,🏦
+1,Multiple Cafeterias,Dining,🍽️
+2,Central Science Library,Academic,📚
+2,Supercomputing Facility,Technology,💻
+2,Swimming Pool,Sports,🏊
+2,Basketball & Tennis Courts,Sports,🏀
+2,Health Centre,Medical,🏥
+2,14 Hostels,Hostel,🏠
+2,Shopping Complex,Recreation,🛍️
+2,IIT Delhi Metro Station,Transport,🚇
+2,Multiple Cafeterias,Dining,🍽️
+2,24x7 Wifi,Technology,📶
+3,J.R.D. Tata Memorial Library,Academic,📚
+3,50+ Research Centres,Academic,🔬
+3,National Supercomputing Mission,Technology,💻
+3,Sports Complex,Sports,🏟️
+3,IISc Health Centre,Medical,🏥
+3,9 Student Residences,Hostel,🏠
+3,Canteen & Multiple Cafes,Dining,🍽️
+3,Guest House,Recreation,🏨
+3,Bank & Post Office,Banking,🏦
+4,Central Library,Academic,📚
+4,Innovation Centre,Academic,💡
+4,Olympic Swimming Pool,Sports,🏊
+4,Auditorium,Recreation,🎭
+4,Hospital,Medical,🏥
+4,14 Hostels,Hostel,🏠
+4,Shopping Complex,Recreation,🛍️
+4,Bank,Banking,🏦
+4,High Speed Wi-Fi,Technology,📶
+5,Nandha Kumaran Library,Academic,📚
+5,Research Centres,Academic,🔬
+5,Sports Complex,Sports,🏟️
+5,Swimming Pool,Sports,🏊
+5,Health Centre,Medical,🏥
+5,12 Hostels,Hostel,🏠
+5,Multiple Canteens,Dining,🍽️
+5,Supermarket,Recreation,🛒
+6,Silver Jubilee Library,Academic,📚
+6,Tech Tower,Academic,🏢
+6,Outdoor Stadium,Sports,🏟️
+6,Swimming Pool,Sports,🏊
+6,Hospital (500-bed),Medical,🏥
+6,23 Hostels,Hostel,🏠
+6,Food Courts & Cafeterias,Dining,🍽️
+6,Shopping Mall on campus,Recreation,🛍️
+6,Bank & ATM,Banking,🏦
+6,High-speed Wi-Fi,Technology,📶
+6,Multiplex Cinema,Recreation,🎬
+7,Central Library (6 floors),Academic,📚
+7,Simulation Lab,Academic,🔬
+7,Tertiary Care Hospital (2000 beds),Medical,🏥
+7,Trauma Centre,Medical,🚑
+7,Sports Complex,Sports,🏟️
+7,Hostels,Hostel,🏠
+7,Cafeterias,Dining,🍽️
+7,Bank & ATM,Banking,🏦
+8,Vikram Sarabhai Library,Academic,📚
+8,Computer Labs,Technology,💻
+8,Sports Complex,Sports,🏟️
+8,Health Centre,Medical,🏥
+8,Heritage Campus (Louis Kahn),Recreation,🏛️
+8,Faculty & Student Housing,Hostel,🏠
+8,Multiple Cafeterias,Dining,🍽️

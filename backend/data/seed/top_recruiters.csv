@@ -1,0 +1,114 @@
+college_id,display_order,company_name
+1,1,Google
+1,2,Microsoft
+1,3,Apple
+1,4,Amazon
+1,5,Goldman Sachs
+1,6,McKinsey
+1,7,Morgan Stanley
+1,8,Qualcomm
+1,9,Texas Instruments
+1,10,Intel
+1,11,Samsung
+1,12,Sony
+1,13,Adobe
+1,14,Flipkart
+1,15,Uber
+2,1,Google
+2,2,Microsoft
+2,3,Amazon
+2,4,Qualcomm
+2,5,Texas Instruments
+2,6,NVIDIA
+2,7,Adobe
+2,8,Goldman Sachs
+2,9,Boston Consulting Group
+2,10,McKinsey
+2,11,Bain
+2,12,Samsung
+2,13,Intel
+2,14,Cisco
+2,15,Walmart
+3,1,Google
+3,2,Microsoft
+3,3,Meta
+3,4,Apple
+3,5,Tesla
+3,6,DRDO
+3,7,ISRO
+3,8,IBM Research
+3,9,Adobe
+3,10,Broadcom
+3,11,Qualcomm
+3,12,Intel
+3,13,Tata Consultancy
+3,14,Wipro
+4,1,Google
+4,2,Microsoft
+4,3,Amazon
+4,4,Goldman Sachs
+4,5,Optiver
+4,6,Tower Research
+4,7,Qualcomm
+4,8,Texas Instruments
+4,9,Oracle
+4,10,VMware
+4,11,Flipkart
+4,12,Zomato
+4,13,Paytm
+4,14,Adobe
+4,15,SAP
+5,1,TCS
+5,2,Infosys
+5,3,Wipro
+5,4,Cognizant
+5,5,Amazon
+5,6,Microsoft
+5,7,Google
+5,8,Samsung
+5,9,Zoho
+5,10,Freshworks
+5,11,Walmart
+5,12,Goldman Sachs
+5,13,DE Shaw
+5,14,JP Morgan
+5,15,Hyundai
+6,1,TCS
+6,2,Infosys
+6,3,Wipro
+6,4,Cognizant
+6,5,HCL
+6,6,Amazon
+6,7,Capgemini
+6,8,Accenture
+6,9,L&T Infotech
+6,10,Zoho
+6,11,Bosch
+6,12,Hyundai
+6,13,Saint-Gobain
+6,14,Caterpillar
+7,1,AIIMS Network Hospitals
+7,2,Medanta
+7,3,Fortis
+7,4,Max Healthcare
+7,5,Apollo Hospitals
+7,6,Narayana Health
+7,7,WHO
+7,8,ICMR
+7,9,DRDO Medical
+7,10,Tata Memorial Centre
+8,1,McKinsey
+8,2,BCG
+8,3,Bain
+8,4,Goldman Sachs
+8,5,Morgan Stanley
+8,6,JP Morgan
+8,7,Google
+8,8,Amazon
+8,9,Flipkart
+8,10,Accenture Strategy
+8,11,Deloitte
+8,12,ITC
+8,13,Nestle
+8,14,P&G
+8,15,Hindustan Unilever

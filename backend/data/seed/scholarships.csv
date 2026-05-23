@@ -1,0 +1,27 @@
+college_id,name,type,amount,amount_desc,eligibility,renewable
+1,Merit-cum-Means Scholarship,Merit + Need,75000,₹75000/year,"Family income < ₹9 LPA, Top 25% in class",true
+1,Free Messing Scholarship,Need,48000,₹4000/month,Family income < ₹4.5 LPA,true
+1,IITB Heritage Fund Scholarship,Merit,50000,₹50000 one-time,Rank 1-100 in JEE Advanced,false
+1,SC/ST Fee Waiver,Category,200000,Full fee waiver,SC/ST students,true
+2,Merit-cum-Means Scholarship,Merit + Need,75000,₹75000/year,"Family income < ₹9 LPA, Merit criteria",true
+2,SC/ST Fee Waiver,Category,200000,Full fee waiver,SC/ST students,true
+2,Dean's List Scholarship,Merit,30000,₹30000/semester,Top 10% CGPA in the branch,false
+3,KVPY Fellowship,Merit,96000,₹8000/month,KVPY scholarship holders,true
+3,CSIR-SRF/JRF,Merit,360000,₹25000-30000/month,Ph.D scholars with CSIR/UGC fellowship,true
+3,PMRF (Prime Minister Research Fellowship),Merit,864000,₹70000-80000/month,Exceptional Ph.D candidates from IITs/IISc,true
+4,Merit Scholarship (70% and above),Merit,30000,₹30000/semester,CGPA ≥ 7.0 in first semester,true
+4,Dr. Pillai Scholarship,Merit,50000,₹50000/year,Top 1% in BITSAT,false
+4,BITS Pilani Need-Based Aid,Need,100000,Varies,Family income < ₹5 LPA,true
+5,Merit Scholarship,Merit,25000,₹25000/year,Top 10% in the batch,true
+5,Government SC/ST Scholarship,Category,60000,Full fee waiver,SC/ST students,true
+5,State Government Scholarship,Need,20000,₹20000/year,Tamil Nadu students with family income < ₹2.5 LPA,true
+6,Chancellor's Scholarship,Merit,50000,₹50000/year,VITEEE rank 1-500,true
+6,Merit Scholarship,Merit,25000,₹25000/year,VITEEE rank 501-2500,false
+6,Sports Scholarship,Sports,30000,₹30000/year,State/National level sports achievement,true
+6,Need-based Aid,Need,50000,Up to ₹50000/year,Family income < ₹3 LPA,true
+7,Ministry of Health Scholarship,Need,30000,₹30000/year,MBBS students with family income < ₹4.5 LPA,true
+7,AIIMS Special Award,Merit,20000,₹20000/year,Rank 1-3 in MBBS batch,true
+7,SC/ST Special Scholarship,Category,50000,₹50000/year,SC/ST students,true
+8,Need-Based Fellowship,Need,200000,₹2 Lakh/year,Family income < ₹5 LPA,true
+8,Merit Scholarship,Merit,300000,₹3 Lakh/year,Top 5% CGPA in PGP batch,true
+8,Alumni Endowed Scholarship,Merit,500000,₹5 Lakh (one-time),Highest academic achievement in first year,false
