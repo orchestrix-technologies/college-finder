@@ -292,8 +292,17 @@ class College(BaseModel, SEOModel):
     toll_free = models.CharField(max_length=20, blank=True)
 
     logo = models.ImageField(upload_to="colleges/logos/", null=True, blank=True)
+    logo_color = models.CharField(
+        max_length=20, blank=True, help_text="Hex color for logo background e.g. #003366"
+    )
+    logo_initials = models.CharField(
+        max_length=10, blank=True, help_text="Short initials shown when logo is absent e.g. IITB"
+    )
     cover_image = models.ImageField(
         upload_to="colleges/covers/", null=True, blank=True
+    )
+    cover_image_url = models.URLField(
+        blank=True, help_text="External cover image URL (used when cover_image file is not uploaded)"
     )
 
     description = models.TextField(blank=True)
@@ -305,7 +314,7 @@ class College(BaseModel, SEOModel):
     notable_alumni = models.JSONField(
         default=list,
         blank=True,
-        help_text="[{name, designation, company, batch_year}]",
+        help_text="[{name, achievement, year}]",
     )
 
     naac_grade = models.CharField(
@@ -726,6 +735,11 @@ class HostelDetail(BaseModel):
     warden_contact = models.CharField(max_length=20, blank=True)
     distance_from_college_km = models.DecimalField(
         max_digits=4, decimal_places=1, null=True, blank=True
+    )
+    amenities = models.JSONField(
+        default=list,
+        blank=True,
+        help_text='["Wi-Fi", "Gym", "Mess", "Laundry", "Common Room", ...]',
     )
     is_on_campus = models.BooleanField(default=True)
     additional_info = models.TextField(blank=True)
